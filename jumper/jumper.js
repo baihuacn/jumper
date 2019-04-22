@@ -55,7 +55,7 @@
   }];
   
   game.help.changeHelpContent(helpContent);
-  game.mode.changeModeContent('你好');
+  game.mode.changeModeContent('待开发');
   img.imgMethod.getImage();
   img.imgMethod.checkImageIsAllReady(function() {
 

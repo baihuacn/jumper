@@ -146,7 +146,6 @@
   }
 
   function Help () {
-    _this = this;
     this.showState = false;
     this.element = document.getElementById('help');
 
@@ -154,17 +153,16 @@
     this.changeHelpContent = changeHelpContent;
 
     function changeHelpShowState(state) {
-      _this.showState = state;
-      _this.element.style.display = state === true ? 'block' : 'none';
+      this.showState = state;
+      this.element.style.display = state === true ? 'block' : 'none';
     }
 
     function changeHelpContent(content) {
-      _this.element.innerHTML = content;
+      this.element.innerHTML = content;
     }
   }
 
   function Mode () {
-    _this = this;
     this.showModeState = false;
     this.modeElement = document.getElementById('mode');
 
@@ -172,12 +170,12 @@
     this.changeModeContent = changeModeContent;
 
     function changeModeShowState(state) {
-      _this.showModeState = state;
-      _this.modeElement.style.display = state === true ? 'block' : 'none';
+      this.showModeState = state;
+      this.modeElement.style.display = state === true ? 'block' : 'none';
     }
 
     function changeModeContent(content) {
-      _this.modeElement.innerHTML = content;
+      this.modeElement.innerHTML = content;
     }
   }
   
