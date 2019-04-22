@@ -5,11 +5,11 @@
     var _this = this;
 
     this.leadInfo = {
-      'bodyColor': 'orange',
+      'bodyColor': '#111',
       'eyeOuterColor': '#fff',
       'eyeInnerColor': '#000',
       'mouseColor': '#fff',
-      'aureoleColor': 'red',
+      'aureoleColor': '#888',
       'moveDirection': null,
       'position': {
         'x': canvas.width / 10,
@@ -145,14 +145,6 @@
 
       var pi2 = 2 * Math.PI;
       var leadInfo = _this.leadInfo;
-      var eyeOuterRadius = _this.eyeOuterRadius;
-      var eyeOuterPosition = _this.eyeOuterPosition;
-      var eyeInnerCurrentPosition = _this.eyeInnerCurrentPosition;
-      var eyeInnerRadius = _this.eyeInnerRadius;
-      var eyeInnerPosition = _this.eyeInnerPosition;
-      var mouseIsRect = _this.mouseIsRect;
-      var mouseSize = _this.mouseSize;
-      var mousePosition = _this.mousePosition;
       var aureoleRadius = _this.aureoleRadius;
       var aureolePosition = _this.aureolePosition;
 
@@ -167,31 +159,6 @@
       ctx.beginPath();
       ctx.fillStyle = leadInfo.bodyColor;
       ctx.fillRect(leadInfo.position.x, leadInfo.position.y, leadInfo.size.x, leadInfo.size.y);
-      // draw eyeOuter
-      ctx.beginPath();
-      ctx.fillStyle = leadInfo.eyeOuterColor;
-      ctx.arc(eyeOuterPosition.left.x, eyeOuterPosition.left.y, eyeOuterRadius, 0, pi2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(eyeOuterPosition.right.x, eyeOuterPosition.right.y, eyeOuterRadius, 0, pi2);
-      ctx.fill();
-      // draw eyeInner
-      ctx.beginPath();
-      ctx.fillStyle = leadInfo.eyeInnerColor;
-      ctx.arc(eyeInnerCurrentPosition.left.x, eyeInnerCurrentPosition.left.y, eyeInnerRadius, 0, pi2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(eyeInnerCurrentPosition.right.x, eyeInnerCurrentPosition.right.y, eyeInnerRadius, 0, pi2);
-      ctx.fill();
-      // draw mouse 
-      ctx.beginPath();
-      ctx.fillStyle = leadInfo.mouseColor;
-      if (mouseIsRect) {
-        ctx.fillRect(mousePosition.x, mousePosition.y, mouseSize.x, mouseSize.y);
-      } else {
-        ctx.arc(mousePosition.cx, mousePosition.cy, mouseSize.radius, 0, pi2);
-        ctx.fill();
-      }
     }
 
     function changeMouseState(state) {

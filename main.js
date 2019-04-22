@@ -1,6 +1,5 @@
 (function(global) {
-  var canvasId = 'canvas-game';
-  var canvas = document.getElementById(canvasId);
+  var canvas = document.getElementById('canvas-game');
   var ctx = canvas.getContext('2d');
   var imgMethod = new ImgMethod();
   var imgObject = {};
@@ -9,8 +8,8 @@
 
   var coverScreenTimer = null;
   var coverInterval = 5;    // 定时器间隔
-  var coverColor = '#ddd';  // 覆盖层背景色
-  var fontSize = 40;        // 字体大小
+  var coverColor = '#ffdb9d';  // 覆盖层背景色
+  var fontSize = 24;        // 字体大小
 
   canvas.width = width;
   canvas.height = height;
@@ -81,7 +80,7 @@
       ctx.beginPath();
       ctx.fillStyle = _this.textColor;
       ctx.font = fontSize + 'px Arial';
-      ctx.fillText('当前得分:' + _this.score, canvas.width - textWidth, 5);
+      ctx.fillText('当前得分:' + _this.score, (canvas.width - textWidth) / 2, 20);
     }
   }
 

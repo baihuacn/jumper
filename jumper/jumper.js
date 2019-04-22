@@ -20,7 +20,7 @@
   var isToLeft = false;
   var isRecordAureole = false;
   var textColor = '#000';       // 文本颜色
-  var fontSize = 40;            // 字体大小
+  var fontSize = 24;            // 字体大小
   var HighScore = 0;            // 历史最高分记录值
   var startTime = 0;            // 蓄力开始时间存储值
   var aureoleShrinkSpeed = 0;   // 光圈收缩速度存储值
@@ -31,7 +31,7 @@
   var touchDB = 360;            // 触摸灵敏度，越小反应越大
 
   var currentChooseOption = ''; // 记录当前悬浮的操作选项
-  var helpContent = '<p>操作: 电脑 按下空格蓄力，松开起跳 手机 按下开始蓄力,左右滑动的越远手指松开时跳的越远</p><p>得分: 每次踩中一个方块得一分,越过方块不得分</p><p>注意: 掉下缝隙或飞过屏幕右侧则判负,加油吧</p><p>（点击任意处关闭说明）</p>';  
+  var helpContent = '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游戏说明</p><br /><br /><p>操作: 电脑按下空格蓄力，圆圈闪烁越快松开起跳的距离越远；手机按下开始蓄力，左右滑动的越远手指松开时跳的越远；</p><br /><p>得分: 每次踩中一个方块得一分，越过方块不得分；</p><br /><p>注意: 掉下缝隙或飞过屏幕右侧则判负。</p><br /><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（点击任意处关闭说明）</p>';  
   var textInfoArr = [{          // 存储菜单的文本信息
     'text': '最高分:' + HighScore,
     'x1': 0,
@@ -215,9 +215,10 @@
       ctx.textBaseline = 'top';
       textInfoArr.forEach(function (textInfo, index) {
         var textSizeInfo = getTextSizeInfo(textInfo.text);
+        var y = index === 0 ? 0 : 200
         textInfo.x1 = textSizeInfo.centerPoint;
         textInfo.x2 = textInfo.x1 + textSizeInfo.textWidth;
-        textInfo.y = canvas.height / textInfoArr.length * index + canvas.height / textInfoArr.length / 2 - 20;
+        textInfo.y = (canvas.height / textInfoArr.length - 80) * index + canvas.height / textInfoArr.length / 2 + y;
         ctx.fillText(textInfo.text, textInfo.x1, textInfo.y);
       });
       clearGameControl();
