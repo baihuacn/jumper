@@ -31,7 +31,7 @@
   var touchDB = 360;            // 触摸灵敏度，越小反应越大
 
   var currentChooseOption = ''; // 记录当前悬浮的操作选项
-  var helpContent = '<p>操作: 电脑 按下空格蓄力，松开起跳 手机 按下开始蓄力,左右滑动的越远手指松开时跳的越远</p><p>得分: 每次踩中一个方块得一分,越过方块不得分</p><p>注意: 掉下缝隙或飞过屏幕右侧则判负,加油吧</p><hr><p>点击任意处关闭说明</p>';  
+  var helpContent = '<p>操作: 电脑 按下空格蓄力，松开起跳 手机 按下开始蓄力,左右滑动的越远手指松开时跳的越远</p><p>得分: 每次踩中一个方块得一分,越过方块不得分</p><p>注意: 掉下缝隙或飞过屏幕右侧则判负,加油吧</p><p>（点击任意处关闭说明）</p>';  
   var textInfoArr = [{          // 存储菜单的文本信息
     'text': '最高分:' + HighScore,
     'x1': 0,
@@ -55,7 +55,7 @@
   }];
   
   game.help.changeHelpContent(helpContent);
-  game.mode.changeModeContent('nihao');
+  game.mode.changeModeContent('你好');
   img.imgMethod.getImage();
   img.imgMethod.checkImageIsAllReady(function() {
 

@@ -165,19 +165,19 @@
 
   function Mode () {
     _this = this;
-    this.showState = false;
-    this.element = document.getElementById('mode');
+    this.showModeState = false;
+    this.modeElement = document.getElementById('mode');
 
     this.changeModeShowState = changeModeShowState;
     this.changeModeContent = changeModeContent;
 
     function changeModeShowState(state) {
-      _this.showState = state;
-      _this.element.style.display = state === true ? 'block' : 'none';
+      _this.showModeState = state;
+      _this.modeElement.style.display = state === true ? 'block' : 'none';
     }
 
     function changeModeContent(content) {
-      _this.element.innerHTML = content;
+      _this.modeElement.innerHTML = content;
     }
   }
   
