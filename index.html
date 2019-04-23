@@ -18,7 +18,8 @@
       canvas {
         display: block;
       }
-      #help, #mode {
+      #help,
+      #mode {
         top: 0;
         left: 0;
         z-index: 3;
@@ -30,7 +31,7 @@
         display: none;
         cursor: pointer;
         position: absolute;
-        text-align: left;
+        text-align: center;
         box-sizing: border-box;
         background-color: #ffdb9d;
       }
@@ -41,16 +42,15 @@
   </head>
   <body>
     <!-- 游戏区 -->
-    <canvas id="canvas-game"></canvas>
+    <canvas id="game"></canvas>
     <!-- 存放说明文字的div -->
     <div id="help"></div>
     <!-- 模式选择 -->
     <div id="mode"></div>
     <!-- js脚本 -->
-    <script src="main.js"></script>
-    <script src="components/background.js"></script>
-    <script src="roles/lead.js"></script>
-    <script src="jumper/jumperBlock.js"></script>
-    <script src="jumper/jumper.js"></script>
+    <script src="index.js"></script>
+    <script src="lead.js"></script>
+    <script src="jumperBlock.js"></script>
+    <script src="jumper.js"></script>
   </body>
 </html>
