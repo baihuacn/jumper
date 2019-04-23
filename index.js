@@ -11,7 +11,7 @@
 
   var coverScreenTimer = null
   var coverInterval = 5 // 定时器间隔
-  var coverColor = '#ffdb9d' // 覆盖层背景色
+  var coverColor = '#7fe8fb' // 覆盖层背景色
   var fontSize = 24 // 字体大小
 
   canvas.width = width

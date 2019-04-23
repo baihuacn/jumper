@@ -1,12 +1,12 @@
 /*
- * 控制方块
+ * 控制盒子
  */
 ;(function() {
   var leadInfo = game.lead.leadInfo
   var canvas = window.canvas
   var ctx = window.ctx
   var leadInfo = game.lead.leadInfo
-
+  // 盒子类
   function Block() {
     var _this = this
 
@@ -100,7 +100,7 @@
       })
     }
   }
-
+  // 
   function randomNoZero() {
     var num = Math.random()
     while (num) {
