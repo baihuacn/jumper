@@ -100,7 +100,7 @@
       })
     }
   }
-  // 
+  // 计算出一个非零数字
   function randomNoZero() {
     var num = Math.random()
     while (num) {
@@ -108,7 +108,7 @@
     }
     return randomNoZero()
   }
-
+  // 计算非白色的颜色值
   function randomColorNotWhite() {
     var colorNum = randomColor()
     while (colorNum < 950) {
