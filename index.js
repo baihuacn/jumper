@@ -16,6 +16,7 @@
 
   canvas.width = width
   canvas.height = height
+
   // 检查canvas图片绘制完成
   function ImgMethod() {
     var _this = this
@@ -87,14 +88,12 @@
 
     function coverAll() {
       coverScreenTimer = setInterval(function() {
-        ctx.fillStyle = coverColor
+
         if (currentCover >= stepHeight) {
           clearInterval(coverScreenTimer)
           coverScreenTimer = null
         }
-        coverStartPointArr.forEach(function(positionY) {
-          ctx.fillRect(0, positionY, canvasWidth, currentCover)
-        })
+
         currentCover += perCoverHeight
         currentCover = currentCover > stepHeight ? stepHeight : currentCover
         if (currentCover >= stepHeight) {

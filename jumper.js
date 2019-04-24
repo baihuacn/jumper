@@ -23,7 +23,7 @@
   var canGetScore = true
   var isToLeft = false
   var isRecordAureole = false
-  var textColor = '#000' // 文本颜色
+  var textColor = '#222' // 文本颜色
   var fontSize = 24 // 字体大小
   var HighScore = 0 // 历史最高分记录值
   var startTime = 0 // 蓄力开始时间存储值
@@ -214,12 +214,16 @@
     jumperTimer = null
     HighScore = HighScore > currentScore ? HighScore : currentScore
     textInfoArr[0].text = '最高分:' + HighScore
-    game.controller.coverFullScreen(true, endGameCallback)
 
+    game.controller.coverFullScreen(true, endGameCallback)
+    var canvasWidth = canvas.width
+    var canvasHeight = canvas.height
+    var img = document.getElementById('homeImg')
+    ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight)
     function endGameCallback() {
       ctx.beginPath()
       ctx.fillStyle = textColor
-      ctx.font = fontSize + 'px Arial'
+      ctx.font = 'bold ' + 2*fontSize + 'px Arial'
       ctx.textBaseline = 'top'
       textInfoArr.forEach(function(textInfo, index) {
         var textSizeInfo = getTextSizeInfo(textInfo.text)
@@ -229,6 +233,7 @@
         textInfo.y = (canvas.height / textInfoArr.length - 80) * index + canvas.height / textInfoArr.length / 2 + y
         ctx.fillText(textInfo.text, textInfo.x1, textInfo.y)
       })
+
       clearGameControl()
       setChooseGameEvent()
     }
@@ -321,7 +326,7 @@
         startTime = new Date().getTime()
       }
     }
-
+    // 松开空格键
     window.onkeyup = function(event) {
       var endTime = 0
       if (event.keyCode === 32 && game.lead.sportInfo.speed.y === 0 && !isToLeft) {
@@ -331,6 +336,12 @@
         endTime = new Date().getTime()
         var deviationTime = (endTime - startTime) / 1000
         horizontalDirection = 1
+        // 播放跳跃音乐，500ms后播放停止
+        var audio = document.getElementById('jumperAudio')
+        audio.play()
+        setTimeout(function() {
+          audio.pause()
+        }, 500)
         startJump(deviationTime)
       }
     }
